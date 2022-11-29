@@ -13,41 +13,41 @@
         <link rel="shortcut icon" href="../../../static/img/Logo_Jk .png">
     </head>
     <body>
-        <form class="form-signup" method="POST" action="{{url_for('signup')}}" >
+        <form class="form-signup" method="POST" action="{{url_for('formulario.signup')}}" >
             <div class="form">
                 <h2>SIGN UP</h2>
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="mb-31">
                     <label for="exampleInputEmail1" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="Cedula" name = "Cedula" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Cedula" name = "Cedula" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="Nombre" name = "Nombre" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Nombre" name = "Nombre" aria-describedby="emailHelp" required> 
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Apellidos</label>
-                    <input type="text" class="form-control" id="Apellido" name = "Apellido" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Apellido" name = "Apellido" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">País</label>
-                    <input type="text" class="form-control" id="Pais" name = "Pais" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Pais" name = "Pais" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Ciudad</label>
-                    <input type="text" class="form-control" id="Ciudad" name = "Ciudad" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Ciudad" name = "Ciudad" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="Direccion" name = "Direccion"  aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="Direccion" name = "Direccion"  aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="correo" class="form-label">Correo</label>
-                    <input type="text" class="form-control" id="Correo" name = "Correo"  aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="Correo" name = "Correo"  aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="Password" name = "password" >
+                    <input type="password" class="form-control" id="Password" name = "password" required>
                 </div>
                 <button text-align="center" type="submit" class="btn btn-primary">SIGN UP</button><br>
                 <a onclick= location.href="login">LOG IN</a>

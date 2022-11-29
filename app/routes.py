@@ -5,12 +5,6 @@ from funciones import *  #Importando mis Funciones
 
 rutas = Blueprint("rutas", __name__)
 #Redireccionando cuando la página no existe
-@rutas.errorhandler(404)
-def not_found(error):
-    if 'conectado' in session:
-        return redirect(url_for('inicio'))
-    else:
-        return render_template('public/modulo_login/index.html') 
     
 #Creando mi Decorador para el Home
 @rutas.route('/')
@@ -30,3 +24,7 @@ def logout():
     msg_cerrado ="La sesión fue cerrada correctamente"
     return render_template('public/modulo_login/index.html', msjAlert = msg_cerrado, typeAlert=1)
 
+@rutas.route('/protect')
+@login_required
+def protect():
+    return "<h1>Protegido check</h1>"

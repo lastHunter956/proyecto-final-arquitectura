@@ -5,6 +5,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask_login import LoginManager, login_user, logout_user, login_required
 from conexionBD import *  #Importando conexion BD
 from funciones import *  #Importando mis Funciones
+from formularios import formulario  #Importando mis Funciones
 from routes import * #Vistas
 # Models:
 from models.ModelUser import Model_user
@@ -16,7 +17,7 @@ db = MySQL(app) #Inicializando la conexión a la BD
 csrf = CSRFProtect()
 login_manager_app = LoginManager(app)
 app.register_blueprint(rutas) #Registrando mis rutas
-
+app.register_blueprint(formulario) #Registrando mis rutas
 @login_manager_app.user_loader
 def load_user(id):
     return Model_user.get_by_id(db, id)
@@ -43,27 +44,13 @@ def login1():
                 return render_template('public/modulo_login/login.html')
         else:
             return render_template('public/modulo_login/login.html')
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    datos = request.form
-    if request.method == 'POST':
-        print("Datos: ", datos["Cedula"])
-        params = {
-            "Apellido": datos["Apellido"],
-            "Correo": datos["Correo"],
-            "Cedula": datos["Cedula"],
-            "Ciudad": datos["Ciudad"],
-            "Direccion": datos["Direccion"],
-            "Nombre": datos["Nombre"],
-            "Pais": datos["Pais"],
-            "Contraseña": datos["password"]
-            }
-        response = requests.post('https://api-crear-cuenta.onrender.com/signup', json=params)
-        if response.status_code == 200:
-            return render_template('public/modulo_login/login.html')
-        return render_template('public/dashboard/index.html')  
-    return render_template('public/modulo_login/signup.html')     
-
+        
+@app.errorhandler(404)
+def not_found(error):
+    if 'conectado' in session:
+        return redirect(url_for('inicio'))
+    else:
+        return render_template('public/modulo_login/index.html') 
 if __name__ == "__main__":
     app.config.from_object(config['development'])
     csrf.init_app(app)
