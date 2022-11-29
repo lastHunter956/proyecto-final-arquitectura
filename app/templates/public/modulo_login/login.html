@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>    
+        <title>JOTADOKA | Log In</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/loading.css">
+        <link rel="stylesheet" href="../static/css/form.css">
+        <link rel="stylesheet" href="../static/img">
+        <link href="https://fonts.googleapis.com/css2? family=Hammersmith+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="../static/img/Logo_Jk .png">
+    </head>
+    <body>
+        <form class="form-signin" action="{{url_for('login1')}}" method="POST">
+            <div class="form">
+                <h2>LOG IN</h2>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div class="mb-31">
+                    <label for="exampleInputEmail1" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button text-align="center" type="submit" class="btn btn-primary">LOG IN</button><br>
+                <a onclick= location.href="signup">SIGN UP</a>
+            </div>
+        </form>
+    </body>
+</html>

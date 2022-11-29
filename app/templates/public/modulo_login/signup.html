@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>    
+        <title>JOTADOKA | Sign Up</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../../static/css/index.css">
+        <link rel="stylesheet" href="../../../static/css/form.css">
+        <link rel="stylesheet" href="../../../static/img">
+        <link href="https://fonts.googleapis.com/css2? family=Hammersmith+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="../../../static/img/Logo_Jk .png">
+    </head>
+    <body>
+        <form class="form-signin" action="{{url_for('signup1')}}" method="POST">
+            <div class="form">
+                <h2>SIGN UP</h2>
+                
+                <div class="mb-31">
+                    <label for="exampleInputEmail1" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" id="Cedula" name = "Cedula" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="Nombre" name = "Nombre" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="Apellido" name = "Apellido" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">País</label>
+                    <input type="text" class="form-control" id="Pais" name = "Pais" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ciudad</label>
+                    <input type="text" class="form-control" id="Ciudad" name = "Ciudad" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="Direccion" name = "Direccion"  aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo</label>
+                    <input type="text" class="form-control" id="Correo" name = "Correo"  aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="Password" name = "Password" >
+                </div>
+                <button text-align="center" type="submit" class="btn btn-primary">SING UP</button><br>
+                <a onclick= location.href="login">LOG IN</a>
+            </div>
+        </form>
+    </body>
+</html>
