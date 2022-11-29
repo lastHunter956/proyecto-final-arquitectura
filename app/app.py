@@ -48,7 +48,7 @@ def login1():
 @app.errorhandler(404)
 def not_found(error):
     if 'conectado' in session:
-        return redirect(url_for('inicio'))
+        return redirect(url_for('rutas.inicio'))
     else:
         return render_template('public/modulo_login/index.html') 
 if __name__ == "__main__":

@@ -10,18 +10,32 @@ def signup():
     datos = request.form
     if request.method == 'POST':
         print("Datos: ", datos["Cedula"])
-        params = {
-            "Apellido": datos["Apellido"],
-            "Correo": datos["Correo"],
-            "Cedula": datos["Cedula"],
-            "Ciudad": datos["Ciudad"],
-            "Direccion": datos["Direccion"],
-            "Nombre": datos["Nombre"],
-            "Pais": datos["Pais"],
-            "Contraseña": datos["password"]
+        params = {"Apellido": datos["Apellido"],"Correo": datos["Correo"],
+                  "Cedula": datos["Cedula"],"Ciudad": datos["Ciudad"],
+                  "Direccion": datos["Direccion"],"Nombre": datos["Nombre"],
+                  "Pais": datos["Pais"],"Contraseña": datos["password"]
             }
         response = requests.post('https://api-crear-cuenta.onrender.com/signup', json=params)
         if response.status_code == 200:
             return render_template('public/modulo_login/login.html')
         return render_template('public/dashboard/index.html')  
-    return render_template('public/modulo_login/signup.html') 
+    return render_template('public/modulo_login/signup.html')
+@formulario.route('/perfil', methods=['GET', 'POST'])
+@login_required
+def actualizar_perfil():
+    datos = request.form
+    if request.method == 'POST':
+        print("Datos: ", session["Cedula"])
+        params = {"Apellido": datos["Apellido"],
+                  "Correo": datos["Correo"],
+                  "Ciudad": datos["Ciudad"],
+                  "Direccion": datos["Direccion"],
+                  "Nombre": datos["Nombre"],
+                  "Pais": datos["Pais"],
+            }
+        url = 'https://api-crear-cuenta.onrender.com/signup/'+session['Cedula']
+        response = requests.put(url, json=params)
+        if response.status_code == 200:
+            return render_template('public/dashboard/perfil.html')
+        return render_template('public/dashboard/index.html')  
+    return render_template('public/dashboard/perfil.html')

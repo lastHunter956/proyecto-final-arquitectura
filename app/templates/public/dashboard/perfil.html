@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JOTADOKA | Mi Perfil</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/nav_y_footer.css">
+    <link rel="stylesheet" href="../static/css/perfil.css">
+    <link rel="stylesheet" href="../static/img">
+    <link href="https://fonts.googleapis.com/css2? family=Hammersmith+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../static/img/Logo_Jk .png">
+</head>
+
+<body>
+    <nav>
+        <div class="g-container_nav">
+            <div class="g-container_nav2">
+                <img id="nf_icono" src="../static/img/lineas.png" alt="menu de opciones">
+            </div>
+
+            <div class="g-container_nav2">
+                <img id="logo1" src="../static/img/Jk .png" alt="Logo">
+            </div>
+
+            <div class="g-container_nav2">
+                <img class="carshopping" id="nf_icono" src="../static/img/carrito-de-compras.png" alt="carrito de compras">
+                <a class="usuario" href="../modulo_login/login.html"><img src="../static/img/usuario-de-perfil.png" width="40px"></a>
+            </div>
+        </div>
+    </nav>
+    <table>
+        <tr>
+            <td>
+                <div class="nav_vertical">
+                    <ul>
+                        <li><a href="../dashboard/perfil.html">Mi Perfil</a></li>
+                        <li><a href="../dashboard/pages/compras.html">Mis Compras</a></li>
+                        <li><a href="../dashboard/pages/vender.html">Vender mi Vehiculo</a></li>
+                        <li><a href="../dashboard/index.html">Inicio</a></li>
+                        <li><a href="../dashboard/index.html"><img src="../static/img/boton-salir-a-la-aplicacion.png" width="20px"></a></li>
+                    </ul>
+                </div>
+            </td>
+            <td class="formato">
+                <form class="form-signup" method="POST" action="{{url_for('formulario.actualizar_perfil')}}" >
+                    <div class="form">
+                        <h2>DATOS</h2>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <h1>Cedula, {{ current_user.id}}</h1>
+                        <table class="datos">
+                            <td>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="Nombre" name="Nombre" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="Apellido" name="Apellido"  aria-describedby="emailHelp">
+                                </div>
+                                
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="Pais" name="Pais" aria-describedby="emailHelp">
+                                </div>
+                            </td>
+                            <td>
+                                <p>                  </p>
+                            </td>
+                            <td>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="Direccion" name="Direccion" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="Ciudad" name="Ciudad" aria-describedby="emailHelp">
+                                </div>
+                            </td>
+                        </table>
+                        <button text-align="center" type="submit"class="btn btn-primary">TO UPDATE</button>
+                    </div>
+                </form>
+            </td>
+        </tr>    
+    </table>
+
+
+
+
+    <footer>
+        <div class="g-container_footer">
+            <div class="g-container_footer2">
+                <img id="nf_icono" src="../static/img/facebook.png" alt="Logo de facebook">
+                <br><br>
+                <img id="nf_icono" src="../static/img/instagram.png" alt="Logo de instagram">
+            </div>
+            <div class="g-container_footer2">
+                <img id="logo2" src="../static/img/Jk2.png">
+            </div>
+            <div class="g-container_footer2">
+                <p id="centrar_footer">
+                    <b id="sede">SEDE BOGOTA</b>
+                <p id="centrar_footer">Cra 68 # 98D-15 Bogotá</p>
+                </p>
+                <br>
+                <p id="centrar_footer">
+                    <b id="sede">SEDE CARTAGENA</b>
+                <p id="centrar_footer">Cra. 17 #32 – 56, Cartagena de Indias</p>
+                </p>
+            </div>
+        </div>
+        <h3 id="centrar_footer"><img src="../static/img/derechos-de-autor.png" alt="derechos-de-autor" id="autor"> JOTADOCA -
+            2022</h3>
+    </footer>
+</body>
+</html>    
