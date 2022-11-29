@@ -18,15 +18,15 @@
                 <h2>LOG IN</h2>
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="mb-31">
-                    <label for="exampleInputEmail1" class="form-label">Correo</label>
+                    <label for="correo" class="form-label">Correo</label>
                     <input type="email" class="form-control" id="Correo" name="Correo" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="contraseña" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="Password" name="Password">
                 </div>
                 <button text-align="center" type="submit" class="btn btn-primary">LOG IN</button><br>
-                <a onclick= location.href="signup">SIGN UP</a>
+                <a onclick= "location.href='signup'">SIGN UP</a>
             </div>
         </form>
     </body>

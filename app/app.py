@@ -28,7 +28,7 @@ def login1():
     else:
         if request.method == 'POST':
             datos = request.form
-            user = User(0, datos['Correo'], datos['password'])
+            user = User(0, datos['Correo'], datos['Password'])
             logged_user = Model_user.login(db, user)
             if logged_user != None:
                 if logged_user.Password:
@@ -43,27 +43,26 @@ def login1():
                 return render_template('public/modulo_login/login.html')
         else:
             return render_template('public/modulo_login/login.html')
-@app.route('/signup8', methods=['GET', 'POST'])
-def signup1():
-    if 'conectado' in session:
-        return render_template('public/dashboard/index.html', data_login = datos_login())
-    else:
-        datos = request.form
-        if request.method == 'POST':
-            params = {
-               "Apellido": datos['Apellido'],
-                "Correo": datos['Correo'],
-                "Cedula": datos['Cedula'],
-                "Ciudad": datos['Ciudad'],
-                "Direccion": datos['Direccion'],
-                "Nombre": datos['Nombre'],
-                "Pais": datos['Pais'],
-                "Contraseña": datos['Password']
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    datos = request.form
+    if request.method == 'POST':
+        print("Datos: ", datos["Cedula"])
+        params = {
+            "Apellido": datos["Apellido"],
+            "Correo": datos["Correo"],
+            "Cedula": datos["Cedula"],
+            "Ciudad": datos["Ciudad"],
+            "Direccion": datos["Direccion"],
+            "Nombre": datos["Nombre"],
+            "Pais": datos["Pais"],
+            "Contraseña": datos["password"]
             }
         response = requests.post('https://api-crear-cuenta.onrender.com/signup', json=params)
         if response.status_code == 200:
-            return render_template('public/modulo_login/signup.html')
-        return render_template('public/dashboard/index.html')        
+            return render_template('public/modulo_login/login.html')
+        return render_template('public/dashboard/index.html')  
+    return render_template('public/modulo_login/signup.html')     
 
 if __name__ == "__main__":
     app.config.from_object(config['development'])
