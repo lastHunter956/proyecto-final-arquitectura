@@ -15,6 +15,7 @@ from models.entities.User import User
 app = Flask(__name__)#Declarando nombre de la aplicación e inicializando, crear la aplicación Flask
 db = MySQL(app) #Inicializando la conexión a la BD
 csrf = CSRFProtect()
+csrf.init_app(app)
 login_manager_app = LoginManager(app)
 app.register_blueprint(rutas) #Registrando mis rutas
 app.register_blueprint(formulario) #Registrando mis rutas
