@@ -6,70 +6,169 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../static/css/index.css">
-    <link rel="stylesheet" href="../../../static/css/nav_y_footer.css">
-    <link rel="stylesheet" href="../../../static/img">
-    <link rel="shortcut icon" href="../../../static/img/Logo_Jk .png">
+    <link rel="stylesheet" href="./../../static/css/index.css">
+    <link rel="stylesheet" href="./../../static/css/nav_y_footer.css">
+    <link rel="stylesheet" href="../html/vehi_nuevos.html">
+    <link rel="stylesheet" href="./../../static/img">
+    <link href="https://fonts.googleapis.com/css2? family=Hammersmith+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./../../static/img/general/Logo_Jk .png">
 </head>
 
 <body>
     <nav>
         <div class="g-container_nav">
-            <div class="g-container_nav2">
-                <img id="nf_icono" src="../../../static/img/lineas.png" alt="menu de opciones">
+            <div class="g-container_nav2" id="menuu">
+                <label for="menu" class="nav_label">
+                    <img id="nf_lineas" src="./../../static/img/general/lineas.png" alt="menu de opciones">
+                </label>
+                <input type="checkbox" id="menu" class="nav_input">
+                <div class="nav_menu">
+                    <a href="../../public/modulo_login/index.html" class="item2"><b id="letra">INICIO</b></a>
+                    <br><br><br>
+                    <a href="../../public/dashboard/pages/vehi_nuevos.html" class="item"><b id="letra">VEHICULOS NUEVOS</b></a>
+                    <br><br><br>
+                    <a href="../../public/dashboard/pages/vehi_usados.html" class="item"><b id="letra">VEHICULOS USADOS</b></a>
+                </div>
             </div>
-
             <div class="g-container_nav2">
-                <img id="logo1" src="../../../static/img/Jk .png" alt="Logo">
+                <a onclick= location.href="perfil">">
+                    <img id="logo1" src="./../../static/img/general/Jk .png" alt="Logo">
+                </a>
             </div>
-
             <div class="g-container_nav2">
-                <img id="nf_icono" src="../../../static/img/carrito-de-compras.png" alt="carrito de compras">
+                <div class="caja_carrito">
+                    <label for="carrito" class="nav_label">
+                        <img id="nf_carrito" src="./../../static/img/general/carrito-de-compras.png" alt="carrito de compras">
+                    </label>
+                    <input type="checkbox" id="carrito" class="nav_input2">
+                    <div class="nav_carrito">
+                        <div class="lista_vehiculo">
+                           <div class="_vehiculo">
+                                <img id="vehiculos" src="./../../static/img/nuevos/edge/principal.png" alt="vehiculo">
+                                <div class="carrito_detalle">
+                                    <p>MAZDA ALL NEW 2 GRAND TOURING LX 2019</p>
+                                    <p id="precio_vehiculo">$ 170.990.000</p>
+                                    <p id="delete_vehiculo">Eliminar</p>
+                                </div>
+                            </div>
+                            <div class="_vehiculo">
+                                <img id="vehiculos" src="./../../static/img/nuevos/edge/principal.png" alt="vehiculo">
+                                <div class="carrito_detalle">
+                                    <p>MAZDA ALL NEW 2 GRAND TOURING LX 2019</p>
+                                    <p id="precio_vehiculo">$ 170.990.000</p>
+                                    <p id="delete_vehiculo">Eliminar</p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
                 <button id="login" onclick= location.href="logout">cerrar</button>
+                </a>
+                
             </div>
         </div>
     </nav>
-
-    
-    <img id="Lugar" src="../../../static/img/Jotadoca.png" alt="Lugar">
+    <img id="Lugar" src="./../../static/img/general/Jotadoca.png" alt="Lugar">
     <br><br>
     <center>
-        <h1>LO HACEMOS MÁS FACIL PARA TI</h1>
+        <h1>LO HACEMOS MAS FACIL PARA TI</h1>
     </center>
-    <br><br>
+    <br><br><br>
     <div class="g-container_nuevos">
         <div class="g-container_nuevos2">
-            <img id="Personas" src="../../../static/img/Personas.png" alt="Personas">
+            <img id="Personas" src="./../../static/img/general/Personas.png" alt="Personas">
         </div>
         <div class="g-container_nuevos2">
-            <h2 id="min_titulo"><b>VEHÍCULOS NUEVOS</b></h2>
+            <h1 id="min_titulo_nuevo">VEHICULOS NUEVOS</h1>
             <p id="centrar_texto">Elige el auto que más te satisfaga tus necesidades</p>
-            <button id="v_boton"><b>VER VEHÍCULOS NUEVOS</b></button>
+            <a href="../../public/dashboard/pages/vehi_nuevos.html">
+                <button id="v_boton2"><b>VER VEHICULOS NUEVOS</b></button>
+            </a>
         </div>
     </div>
     <br><br><br>
     <div class="g-container_usados">
         <div class="g-container_usados2">
-            <h2 id="min_titulo"><b>VEHICULOS USADOS</b></h2>
+            <h1 id="min_titulo_usado">VEHICULOS USADOS</h1>
             <p id="centrar_texto">Elige el auto que más se adapte a tus preferencias</p>
-            <button id="v_boton"><b>VER VEHICULOS USADOS</b></button>
+            <a href="../../public/dashboard/pages/vehi_usados.html">
+                <button id="v_boton2"><b>VER VEHICULOS USADOS</b></button>
+            </a>
         </div>
         <div class="g-container_usados2">
-            <img id="Personas" src="../../../static/img/Personas2.png" alt="Personas">
+            <img id="Personas" src="./../../static/img/general/Personas2.png" alt="Personas">
         </div>
     </div>
 
+    <br><br><br><br>
+    <center>
+        <div class="cuadro">
+            <h2 id="subtitulo">QUIENES SOMOS</h2>
+        </div>
+    </center>
+    <br>
+    <div class="g-container_Info_nosotro">
+        <div class="g-container_Info_nosotro2">
+            <div class="g-container_Info_nosotro3">
+                <h2 id="centrar_texto2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe in
+                    aspernatur magni temporibus at, quis obcaecati quo. Impedit, commodi asperiores accusamus
+                    mollitia tempore, provident, consequatur et nulla laboriosam facilis excepturi! Lorem ipsum
+                    dolor, sit amet consectetur adipisicing elit. Saepe in aspernatur magni temporibus at, quis
+                    obcaecati quo. Impedit, commodi asperiores accusamus mollitia tempore, provident, consequatur
+                    et nulla laboriosam facilis excepturi!</h2>
+            </div>
+            <div class="g-container_Info_nosotro3">
+                <img id="Personas" src="./../../static/img/general/Personas2.png" alt="Personas">
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <center>
+        <div class="cuadro">
+            <h2 id="subtitulo">COMO TRABAJAMOS</h2>
+        </div>
+    </center>
+    <br>
+    <div class="g-container_Info_nosotro">
+        <div class="g-container_Info_nosotro2">
+            <div class="g-container_Info_nosotro3_2">
+                <img id="Personas" src="./../../static/img/general/Personas2.png" alt="Personas">
+            </div>
+            <div class="g-container_Info_nosotro3_2">
+                <h2 id="centrar_texto2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe in
+                    aspernatur magni temporibus at, quis obcaecati quo. Impedit, commodi asperiores accusamus
+                    mollitia tempore, provident, consequatur et nulla laboriosam facilis excepturi! Lorem ipsum
+                    dolor, sit amet consectetur adipisicing elit. Saepe in aspernatur magni temporibus at, quis
+                    obcaecati quo. Impedit, commodi asperiores accusamus mollitia tempore, provident, consequatur
+                    et nulla laboriosam facilis excepturi!
+                </h2>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="g-container_Titulo_nuevos">
+        <div class="g-container_Titulo_nuevos2">
+            <h2 id="subtitulo">Catalogo</h2>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="g-container_Mostrar_nuevos">
+        <div class="g-container_Mostrar_nuevos2">
+        </div>
+    </div>
 
     <br><br>
     <footer>
         <div class="g-container_footer">
             <div class="g-container_footer2">
-                <img id="nf_icono" src="../../../static/img/facebook.png" alt="Logo de facebook">
+                <img id="nf_icono" src="./../../static/img/general/facebook.png" alt="Logo de facebook">
                 <br><br>
-                <img id="nf_icono" src="../../../static/img/instagram.png" alt="Logo de instagram">
+                <img id="nf_icono" src="./../../static/img/general/instagram.png" alt="Logo de instagram">
             </div>
             <div class="g-container_footer2">
-                <img id="logo2" src="../../../static/img/Jk2.png">
+                <img id="logo2" src="./../../static/img/general/Jk2.png">
             </div>
             <div class="g-container_footer2">
                 <p id="centrar_footer">
@@ -83,9 +182,10 @@
                 </p>
             </div>
         </div>
-        <h3 id="centrar_footer"><img src="../../../static/img/derechos-de-autor.png" alt="derechos-de-autor" id="autor"> JOTADOCA -
+        <h3 id="centrar_footer"><img src="./../../static/img/general/derechos-de-autor.png" alt="derechos-de-autor" id="autor">
+            JOTADOCA -
             2022</h3>
     </footer>
 </body>
-
+<script src="../../../static/js/catalogo.js"></script>
 </html>

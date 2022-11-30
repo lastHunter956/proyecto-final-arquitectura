@@ -13,7 +13,18 @@ def inicio():
         return render_template('public/dashboard/index.html', data_login = datos_login())
     else:
         return render_template('public/modulo_login/index.html')   
-    
+@rutas.route('/vehiculos_nuevos')
+def vehiculos_nuevos():
+    if 'conectado' in session:
+        return render_template('public/dashboard/pages/vehi_nuevos.html', data_login = datos_login())
+    else:
+        return render_template('public/modulo_login/vehi_nuevos.html')  
+@rutas.route('/vehiculos_usados')
+def vehiculos_usados():
+    if 'conectado' in session:
+        return render_template('public/dashboard/pages/vehi_usados.html', data_login = datos_login())
+    else:
+        return render_template('public/modulo_login/vehi_usados.html')  
 # Cerrar session del usuario
 @rutas.route('/logout')
 def logout():
@@ -23,6 +34,11 @@ def logout():
     logout_user()
     msg_cerrado ="La sesión fue cerrada correctamente"
     return render_template('public/modulo_login/index.html', msjAlert = msg_cerrado, typeAlert=1)
+
+@rutas.route('/compras')
+@login_required
+def compras():
+    return render_template('public/dashboard/pages/compras.html', data_login = datos_login())
 
 @rutas.route('/protect')
 @login_required

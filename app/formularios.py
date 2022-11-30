@@ -39,3 +39,23 @@ def actualizar_perfil():
             return render_template('public/dashboard/perfil.html')
         return render_template('public/dashboard/index.html')  
     return render_template('public/dashboard/perfil.html')
+@formulario.route('/vender', methods=['GET', 'POST'])
+@login_required
+def vender_vehiculo():
+    datos = request.form
+    if request.method == 'POST':
+        print("Datos: ", session["Cedula"])
+        params = {
+            "Caracteristica": datos["Caracteristica"],
+            "Modelo": datos["Marca"],
+            "Nombre": datos["Nombre"],
+            "Precio": float(datos["Precio"]),
+            "Descripcion": datos["Descripcion"],
+            "Imagen": datos["Imagen"]
+            }
+        url = 'https://api-ventas.onrender.com/venta/'+session['Correo']
+        response = requests.post(url, json = params)
+        if response.status_code == 200:
+            return render_template('public/dashboard/pages/vender.html')
+        return render_template('public/dashboard/index.html')  
+    return render_template('public/dashboard/pages/vender.html')

@@ -6,30 +6,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/nav_y_footer.css">
-    <link rel="stylesheet" href="../css/perfil.css">
-    <link rel="stylesheet" href="../css/vender.css">
-    <link rel="stylesheet" href="../img">
+    <link rel="stylesheet" href="../../../../static/css/index.css">
+    <link rel="stylesheet" href="../../../../static/css/nav_y_footer.css">
+    <link rel="stylesheet" href="../../../../static/css/perfil.css">
+    <link rel="stylesheet" href="../../../../static/css/vender.css">
+    <link rel="stylesheet" href="../../../../static/img">
     <link href="https://fonts.googleapis.com/css2? family=Hammersmith+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../img/Logo_Jk .png">
+    <link rel="shortcut icon" href="../../../../static/img/general/Logo_Jk .png">
 </head>
 
 <body>
     <nav>
         <div class="g-container_nav">
-            <div class="g-container_nav2">
-                <img id="nf_icono" src="../img/lineas.png" alt="menu de opciones">
+            <div class="g-container_nav2" id="menuu">
+                <label for="menu" class="nav_label">
+                    <img id="nf_lineas" src="../../../../static/img/general/lineas.png" alt="menu de opciones">
+                </label>
+                <input type="checkbox" id="menu" class="nav_input">
+                <div class="nav_menu">
+                    <a href="../html/index.html" class="item2"><b id="letra">INICIO</b></a>
+                    <br><br><br>
+                    <a href="../html/vehi_nuevos.html" class="item"><b id="letra">VEHICULOS NUEVOS</b></a>
+                    <br><br><br>
+                    <a href="../html/vehi_usados.html" class="item"><b id="letra">VEHICULOS USADOS</b></a>
+                </div>
             </div>
-
             <div class="g-container_nav2">
-                <img id="logo1" src="../img/Jk .png" alt="Logo">
+                <a href="../html/index.html">
+                    <img id="logo1" src="../../../../static/img/general/Jk .png" alt="Logo">
+                </a>
             </div>
-
             <div class="g-container_nav2">
-                <img class="carshopping" id="nf_icono" src="../img/carrito-de-compras.png" alt="carrito de compras">
-                <a class="usuario" href="../html/login.html"><img src="../img/usuario-de-perfil.png" width="40px"></a>
+                <div class="caja_carrito">
+                    <label for="carrito" class="nav_label">
+                        <img id="nf_carrito" src="../../../../static/img/general/carrito-de-compras.png" alt="carrito de compras">
+                    </label>
+                    <input type="checkbox" id="carrito" class="nav_input2">
+                    <div class="nav_carrito">
+                        <div class="lista_vehiculo">
+                           <div class="_vehiculo">
+                                <img id="vehiculos" src="../../../../static/img/nuevos/edge/principal.png" alt="vehiculo">
+                                <div class="carrito_detalle">
+                                    <p>MAZDA ALL NEW 2 GRAND TOURING LX 2019</p>
+                                    <p id="precio_vehiculo">$ 170.990.000</p>
+                                    <p id="delete_vehiculo">Eliminar</p>
+                                </div>
+                            </div>
+                            <div class="_vehiculo">
+                                <img id="vehiculos" src="../../../../static/img/nuevos/edge/principal.png" alt="vehiculo">
+                                <div class="carrito_detalle">
+                                    <p>MAZDA ALL NEW 2 GRAND TOURING LX 2019</p>
+                                    <p id="precio_vehiculo">$ 170.990.000</p>
+                                    <p id="delete_vehiculo">Eliminar</p>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <a href="../html/login.html">
+                    <button id="login"><b>LOGIN</b></button>
+                </a>
             </div>
         </div>
     </nav>
@@ -42,43 +79,46 @@
                         <li><a href="../html/compras.html">Mis Compras</a></li>
                         <li><a href="../html/vender.html">Vender mi Vehiculo</a></li>
                         <li><a href="../html/index.html">Inicio</a></li>
-                        <li><a href="../html/index.html"><img src="../img/boton-salir-a-la-aplicacion.png" width="20px"></a></li>
+                        <li><a href="../html/index.html"><img src="../../../../static/img/general/boton-salir-a-la-aplicacion.png" width="20px"></a></li>
                     </ul>
                 </div>
             </td>
             <td class="formato">
-                <form>
+                <form class="form-signup" method="POST" action="{{url_for('formulario.vender_vehiculo')}}" >
                     <div class="form">
                         <h2>DATOS DE VEHÍCULO</h2>
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                         <table class="vender" >
                             <td>
                                 <div class="mb-31">
                                     <label for="exampleInputEmail1" class="form-label">Marca</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" class="form-control" id="Nombre" name="Nombre" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-31">
                                     <label for="exampleInputEmail1" class="form-label">Referencia</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="text" class="form-control" id="Marca" name="Marca" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-31">
-                                    <label for="exampleInputEmail1" class="form-label">Versión</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1" class="form-label">Caracteristica</label>
+                                    <input type="text" class="form-control" id="Caracteristica" name="Caracteristica"  aria-describedby="emailHelp">
                                 </div>
                             </td>
                             <td class="td">
                                 <div class="mb-31">
-                                    <label for="exampleInputEmail1" class="form-label">Modelo</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1" class="form-label">Precio</label>
+                                    <input type="text" class="form-control" id="Precio" name="Precio" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-31">
-                                    <label for="exampleInputEmail1" class="form-label">Kilometraje</label>
-                                    <input type="radio" class="genero" name="Género" value="1">Km/h
-                                    <input type="radio" name="Género" value="2">Milla/h
-                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                                    <input type="text" class="form-control" id="Descripcion" name="Descripcion" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-31">
+                                    <label for="exampleInputEmail1" class="form-label">Imagen</label>
+                                    <input type="text" class="form-control" id="Imagen" name="Imagen" aria-describedby="emailHelp">
                                 </div>
                             </td>
                         </table>
-                        <button text-align="center" type="button" class="send">TO SEND</button>
+                        <button text-align="center" type="submit" class="send">TO SEND</button>
                     </div>
                 </form>
             </td>
@@ -88,12 +128,12 @@
     <footer>
         <div class="g-container_footer">
             <div class="g-container_footer2">
-                <img id="nf_icono" src="../img/facebook.png" alt="Logo de facebook">
+                <img id="nf_icono" src="../../../../static/img/general/facebook.png" alt="Logo de facebook">
                 <br><br>
-                <img id="nf_icono" src="../img/instagram.png" alt="Logo de instagram">
+                <img id="nf_icono" src="../../../../static/img/general/instagram.png" alt="Logo de instagram">
             </div>
             <div class="g-container_footer2">
-                <img id="logo2" src="../img/Jk2.png">
+                <img id="logo2" src="../../../../static/img/general/Jk2.png">
             </div>
             <div class="g-container_footer2">
                 <p id="centrar_footer">
@@ -107,7 +147,8 @@
                 </p>
             </div>
         </div>
-        <h3 id="centrar_footer"><img src="../img/derechos-de-autor.png" alt="derechos-de-autor" id="autor"> JOTADOCA -
+        <h3 id="centrar_footer"><img src="../../../../static/img/general/derechos-de-autor.png" alt="derechos-de-autor" id="autor">
+            JOTADOCA -
             2022</h3>
     </footer>
 </body>
