@@ -1,14 +1,14 @@
-from os import getenv
+#from os import getenv
 class Config:
     SECRET_KEY = 'B!1w8NAt1T^%kvhUI*S^'
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    MYSQL_HOST = getenv('MYSQL_HOST')
-    MYSQL_USER = getenv('MYSQL_USER')
-    MYSQL_PASSWORD = getenv('MYSQL_PASSWORD')
-    MYSQL_DB = getenv('MYSQL_DB')
+    MYSQL_HOST = 'us-cdbr-east-06.cleardb.net'
+    MYSQL_USER = 'bbd292aa23aeaf'
+    MYSQL_PASSWORD = 'ece55924'
+    MYSQL_DB = 'heroku_978ea61906c2949'
 
 
 config = {
